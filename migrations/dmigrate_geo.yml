@@ -1,0 +1,90 @@
+id: dmigrate_geo
+label: 'Geolocation data Migration in benefits to drupal geo paragraphs '
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  headers:
+    Accept: application/json
+  urls:
+    - modules/custom/dmigration_geo/source/geo.json
+  # XPath-like selector. The slash (/) at the beginning is optional.
+  item_selector: /Benefit #/data/Benefit/GeoLocations
+  ids:
+    src_unique_id:
+      type: integer
+  fields:
+    - name: src_unique_id # my ref variable for the json migration
+      label: 'Geo ID' # my label name
+      selector: GeoLocations/UniqueID # name in json
+    - name: src_latitude
+      label: 'Latitude'
+      selector: GeoLocations/Latitude
+    - name: src_longitude
+      label: 'Longitude'
+      selector: GeoLocations/Longitude
+    - name: src_country
+      label: 'Country'
+      selector: GeoLocations/Country
+    - name: src_city
+      label: 'City'
+      selector: GeoLocations/City
+    - name: src_state
+      label: 'State'
+      selector: GeoLocations/State
+process:
+  title:
+    plugin: concat
+    source:
+      - src_city
+      - src_state
+    delimiter: ' '
+  field_geolocation_latitude: src_latitude
+  field_geolocation_longitude: src_longitude
+  field_geolocation_city:  # machine name of the field you are populating
+    - plugin: skip_on_empty
+      source: src_city # source field for migration
+      method: process
+      message: 'No src_city listed.'
+    - plugin: explode
+      delimiter: ','
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: vocab_geo_city # vocabulary name
+  field_geolocation_state	:  # machine name of the field you are populating
+    - plugin: skip_on_empty
+      source: src_state # source field for migration
+      method: process
+      message: 'No src_state listed.'
+    - plugin: explode
+      delimiter: ','
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: vocab_geo_state # vocabulary name
+  field_geolocation_country:  # machine name of the field you are populating
+    - plugin: skip_on_empty
+      source: src_country # source field for migration
+      method: process
+      message: 'No src_country listed.'
+    - plugin: explode
+      delimiter: ','
+    - plugin: callback
+      callable: trim
+    - plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: vocab_geo_country # vocabulary name
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: geo_location_para
+migration_dependencies: null
+

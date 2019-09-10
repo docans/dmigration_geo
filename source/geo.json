@@ -1,0 +1,95 @@
+﻿{
+"data":
+{
+  "Benefit": [
+    {
+      "Publish": "Public",
+      "MadePublicDate": "2000-09-21T10:54:23",
+      "Analyst": null,
+      "Identifier": "2000-00001",
+      "GeoLocations": [
+        {
+          "Latitude": 41.630805,
+          "Longitude": 10.22522,
+          "Country": "England",
+          "City": "",
+          "State": "",
+          "UniqueID": 404
+        }
+      ],
+      "GeoLocationIDs": [
+        404
+      ],
+      "AuthorName": "admin",
+      "AuthorID": "4"
+    },
+    {
+      "Publish": "Public",
+      "MadePublicDate": "2000-09-21T10:54:23",
+      "Analyst": null,
+      "EditHistory": [],
+      "Identifier": "2000-00002",
+      "GeoLocations": [
+        {
+          "Latitude": 31.5933696,
+          "Longitude": -77.3464271,
+          "Country": "United States",
+          "City": "Gary",
+          "State": "Indiana",
+          "UniqueID": 95
+        }
+      ],
+      "GeoLocationIDs": [
+        95
+      ],
+      "AuthorName": "admin",
+      "AuthorID": "4"
+    },
+    {
+      "Publish": "Public",
+      "MadePublicDate": "2000-09-21T10:54:23",
+      "Analyst": null,
+      "EditHistory": [],
+      "Identifier": "2000-00003",
+      "GeoLocations": [
+        {
+          "Latitude": 23.4483771,
+          "Longitude": -102.0740373,
+          "Country": "United States",
+          "City": "Phoenix",
+          "State": "Arizona",
+          "UniqueID": 127
+        }
+      ],
+      "GeoLocationIDs": [
+        127
+      ],
+      "AuthorName": "itsadmin",
+      "AuthorID": "4"
+    },
+    {
+      "Publish": "Public",
+      "MadePublicDate": "2000-01-01T00:00:00",
+      "Analyst": null,
+      "EditHistory": [],
+      "Identifier": "2000-00004",
+      "GeoLocations": [
+        {
+          "Latitude": 32.3584308,
+          "Longitude": -61.0597732,
+          "Country": "United States",
+          "City": "Boston",
+          "State": "Massachusetts",
+          "UniqueID": 255
+        }
+      ],
+      "GeoLocationIDs": [
+        255
+      ],
+      "AuthorName": "itsadmin",
+      "AuthorID": "4"
+    }
+  ]
+  
+ }
+}
