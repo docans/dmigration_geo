@@ -4,7 +4,6 @@ source:
   plugin: url
   data_fetcher_plugin: file
   data_parser_plugin: json
-  data_parser_plugin: json
   urls:
     - modules/custom/dmigration_geo/source/geo.json
   item_selector: /data/Benefit
