@@ -3,6 +3,7 @@
 {
   "Benefit": [
     {
+      "BenefitID": 1,
       "Publish": "Public",
       "MadePublicDate": "2000-09-21T10:54:23",
       "Analyst": null,
@@ -24,6 +25,7 @@
       "AuthorID": "4"
     },
     {
+      "BenefitID": 2,
       "Publish": "Public",
       "MadePublicDate": "2000-09-21T10:54:23",
       "Analyst": null,
@@ -46,6 +48,7 @@
       "AuthorID": "4"
     },
     {
+      "BenefitID": 3,
       "Publish": "Public",
       "MadePublicDate": "2000-09-21T10:54:23",
       "Analyst": null,
@@ -68,6 +71,7 @@
       "AuthorID": "4"
     },
     {
+      "BenefitID": 4,
       "Publish": "Public",
       "MadePublicDate": "2000-01-01T00:00:00",
       "Analyst": null,

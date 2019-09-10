@@ -1,4 +1,10 @@
-name: dmigration_geo
+name: D migration Geo
 type: module
-description: 'A description of what your module does.'
+description: 'Migration Geolocation to Drupal 8'
+package: D Migration
 core: 8.x
+dependencies:
+  - drupal:migrate
+  - entity_reference_revisions:entity_reference_revisions
+  - migrate_plus:migrate_plus
+  - paragraphs:paragraphs

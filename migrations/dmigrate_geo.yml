@@ -4,19 +4,23 @@ source:
   plugin: url
   data_fetcher_plugin: file
   data_parser_plugin: json
-  headers:
-    Accept: application/json
+  data_parser_plugin: json
   urls:
     - modules/custom/dmigration_geo/source/geo.json
-  # XPath-like selector. The slash (/) at the beginning is optional.
-  item_selector: /Benefit #/data/Benefit/GeoLocations
+  item_selector: /data/Benefit
   ids:
     src_unique_id:
       type: integer
   fields:
-    - name: src_unique_id # my ref variable for the json migration
-      label: 'Geo ID' # my label name
-      selector: GeoLocations/UniqueID # name in json
+    - name: src_unique_id
+      label: 'BenefitID'
+      selector: BenefitID
+    - name: src_authorname
+      label: 'AuthorName'
+      selector: AuthorName
+    - name: src_geo_unique_id
+      label: 'Geo ID'
+      selector: GeoLocations/UniqueID
     - name: src_latitude
       label: 'Latitude'
       selector: GeoLocations/Latitude
